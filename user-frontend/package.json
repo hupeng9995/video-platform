@@ -1,0 +1,82 @@
+{
+  "name": "video-platform-frontend",
+  "version": "1.0.0",
+  "description": "Video Platform User Frontend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext js,jsx --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,css,md}\"",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "axios": "^1.3.4",
+    "@tanstack/react-query": "^4.24.6",
+    "zustand": "^4.3.6",
+    "react-hook-form": "^7.43.5",
+    "@hookform/resolvers": "^2.9.11",
+    "yup": "^1.0.2",
+    "react-hot-toast": "^2.4.0",
+    "lucide-react": "^0.323.0",
+    "clsx": "^1.2.1",
+    "tailwind-merge": "^1.10.0",
+    "framer-motion": "^10.0.1",
+    "react-player": "^2.12.0",
+    "react-dropzone": "^14.2.3",
+    "date-fns": "^2.29.3",
+    "react-intersection-observer": "^9.4.3",
+    "react-virtualized-auto-sizer": "^1.0.20",
+    "react-window": "^1.8.8",
+    "react-window-infinite-loader": "^1.0.9"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "vite": "^4.1.0",
+    "eslint": "^8.35.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "prettier": "^2.8.4",
+    "tailwindcss": "^3.2.7",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "vitest": "^0.28.5",
+    "@vitest/ui": "^0.28.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^14.4.3",
+    "jsdom": "^21.1.0"
+  },
+  "keywords": [
+    "react",
+    "video",
+    "platform",
+    "frontend",
+    "vite",
+    "tailwindcss"
+  ],
+  "author": "Video Platform Team",
+  "license": "MIT",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
