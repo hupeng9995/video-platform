@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/admin-favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Video Platform 管理后台 - 强大的视频平台管理系统" />
+    <meta name="keywords" content="管理后台,视频管理,用户管理,数据分析,内容审核" />
+    <meta name="author" content="Video Platform Team" />
+    <meta name="robots" content="noindex, nofollow" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/admin-apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/admin-favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/admin-favicon-16x16.png" />
+    <link rel="manifest" href="/admin-site.webmanifest" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1e293b" />
+    
+    <title>Video Platform 管理后台</title>
+    
+    <style>
+      /* Loading screen styles */
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        border-top: 3px solid #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+      
+      .loading-text {
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">正在加载管理后台...</div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script>
+      // Hide loading screen when app is ready
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.classList.add('fade-out');
+            setTimeout(function() {
+              loadingScreen.style.display = 'none';
+            }, 500);
+          }
+        }, 1000);
+      });
+    </script>
+    
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
